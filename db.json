@@ -1,0 +1,26 @@
+{
+  "clientes": [
+    {
+      "id": 3,
+      "nombre": "Josue",
+      "telefono": 31983913,
+      "email": "josue@juan.com",
+      "empresa": "Código Con Juan"
+    },
+    {
+      "id": 5,
+      "nombre": "Pedro",
+      "telefono": 1398198938,
+      "email": "pedro@juan.com",
+      "empresa": "Código Con Juan"
+    },
+    {
+      "nombre": "KEVIN ORLANDO",
+      "empresa": "PRAGMA",
+      "email": "ikevin1992@gmail.com",
+      "telefono": "3003475768",
+      "notas": "fdsaff",
+      "id": 6
+    }
+  ]
+}
