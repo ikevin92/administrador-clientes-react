@@ -1,5 +1,4 @@
-import { Form, useNavigate } from "react-router-dom";
-
+import { Form, useNavigate } from 'react-router-dom';
 
 export const Cliente = ({ cliente }) => {
   const { nombre, empresa, email, telefono, id } = cliente;
@@ -21,14 +20,12 @@ export const Cliente = ({ cliente }) => {
 
       <td className="p-6">
         <p className="text-gray-600">
-          <span className="text-gray-600 uppercase font-bold">
-            Email:
-          </span> {email}
+          <span className="text-gray-600 uppercase font-bold">Email:</span>{' '}
+          {email}
         </p>
         <p className="text-gray-600">
-          <span className="text-gray-600 uppercase font-bold">
-            Tel:
-          </span> {telefono}
+          <span className="text-gray-600 uppercase font-bold">Tel:</span>{' '}
+          {telefono}
         </p>
       </td>
 
@@ -41,13 +38,14 @@ export const Cliente = ({ cliente }) => {
           Editar
         </button>
         <Form
-          method='post'
+          method="post"
           action={`/clientes/${id}/eliminar`}
           onSubmit={handleEliminar}
         >
           <button
             type="submit"
-            className="text-red-600 hover:text-red-700 uppercase font-bold text-xs">
+            className="text-red-600 hover:text-red-700 uppercase font-bold text-xs"
+          >
             Eliminar
           </button>
         </Form>

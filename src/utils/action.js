@@ -1,8 +1,7 @@
-import { redirect } from "react-router-dom";
-import { actualizarCliente, agregarCliente, eliminarCliente } from "../api";
+import { redirect } from 'react-router-dom';
+import { actualizarCliente, agregarCliente, eliminarCliente } from '../api';
 
 export const action = async ({ request }) => {
-
   const formData = await request.formData();
   const datos = Object.fromEntries(formData);
 
@@ -15,7 +14,9 @@ export const action = async ({ request }) => {
     errores.push('Todos los campos son obligatorios');
   }
 
-  let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+  let regex = new RegExp(
+    "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])",
+  );
 
   if (!regex.test(email)) {
     errores.push('El email no es valido');
@@ -29,7 +30,6 @@ export const action = async ({ request }) => {
   await agregarCliente(datos);
   return redirect('/');
 };
-
 
 export const editarClienteAction = async ({ params, request }) => {
   console.log('ingreso editarClienteAction');
@@ -45,7 +45,9 @@ export const editarClienteAction = async ({ params, request }) => {
     errores.push('Todos los campos son obligatorios');
   }
 
-  let regex = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+  let regex = new RegExp(
+    "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])",
+  );
 
   if (!regex.test(email)) {
     errores.push('El email no es valido');
@@ -59,9 +61,7 @@ export const editarClienteAction = async ({ params, request }) => {
   // actualizar el cliente
   await actualizarCliente(params.clienteId, datos);
   return redirect('/');
-
 };
-
 
 export const eliminarClienteAction = async ({ params }) => {
   await eliminarCliente(params.clienteId);

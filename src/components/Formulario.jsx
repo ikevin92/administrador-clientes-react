@@ -1,16 +1,13 @@
-
-
 export const Formulario = ({ cliente }) => {
-
-
-
   return (
     <>
       <div className="mb-4">
         <label
           className="text-gray-800"
           htmlFor="nombre"
-        >Nombre:</label>
+        >
+          Nombre:
+        </label>
         <input
           id="nombre"
           type="text"
@@ -24,7 +21,9 @@ export const Formulario = ({ cliente }) => {
         <label
           className="text-gray-800"
           htmlFor="empresa"
-        >Empresa:</label>
+        >
+          Empresa:
+        </label>
         <input
           id="empresa"
           type="text"
@@ -32,7 +31,6 @@ export const Formulario = ({ cliente }) => {
           placeholder="Empresa del Cliente"
           name="empresa"
           defaultValue={cliente?.empresa}
-
         />
       </div>
 
@@ -40,7 +38,9 @@ export const Formulario = ({ cliente }) => {
         <label
           className="text-gray-800"
           htmlFor="email"
-        >E-mail:</label>
+        >
+          E-mail:
+        </label>
         <input
           id="email"
           type="email"
@@ -48,7 +48,6 @@ export const Formulario = ({ cliente }) => {
           placeholder="Email del Cliente"
           name="email"
           defaultValue={cliente?.email}
-
         />
       </div>
 
@@ -56,7 +55,9 @@ export const Formulario = ({ cliente }) => {
         <label
           className="text-gray-800"
           htmlFor="telefono"
-        >Teléfono:</label>
+        >
+          Teléfono:
+        </label>
         <input
           id="telefono"
           type="tel"
@@ -64,7 +65,6 @@ export const Formulario = ({ cliente }) => {
           placeholder="Teléfono del Cliente"
           name="telefono"
           defaultValue={cliente?.telefono}
-
         />
       </div>
 
@@ -72,7 +72,9 @@ export const Formulario = ({ cliente }) => {
         <label
           className="text-gray-800"
           htmlFor="notas"
-        >Notas:</label>
+        >
+          Notas:
+        </label>
         <textarea
           as="textarea"
           id="notas"
@@ -81,7 +83,6 @@ export const Formulario = ({ cliente }) => {
           placeholder="Notas del Cliente"
           name="notas"
           defaultValue={cliente?.notas}
-
         />
       </div>
     </>
